@@ -390,6 +390,7 @@ export class BluetoothLeWeb extends WebPlugin implements BluetoothLePlugin {
         namePrefix: options.namePrefix,
       });
     }
+    console.log("-------- DEBUG: using filters", filters);
     return filters;
   }
 
