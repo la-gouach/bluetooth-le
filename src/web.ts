@@ -366,20 +366,14 @@ export class BluetoothLeWeb extends WebPlugin implements BluetoothLePlugin {
     for (const service of options?.services ?? []) {
       filters.push({
         services: [service],
-        optionalServices: options?.optionalServices;
+        optionalServices: options?.optionalServices,
         name: options?.name,
         namePrefix: options?.namePrefix,
       });
     }
     if (options?.optionalServices && filters.length === 0) {
       filters.push({
-        optionalServices: options?.optionalServices;
-        name: options?.name,
-        namePrefix: options?.namePrefix,
-      });
-    }
-    for (const service of options?.services ?? []) {
-      filters.push({
+        optionalServices: options?.optionalServices,
         name: options?.name,
         namePrefix: options?.namePrefix,
       });
@@ -390,7 +384,7 @@ export class BluetoothLeWeb extends WebPlugin implements BluetoothLePlugin {
         namePrefix: options.namePrefix,
       });
     }
-    console.log("-------- DEBUG: using filters", filters);
+    console.log('-------- DEBUG: using filters', filters);
     return filters;
   }
 
